@@ -270,7 +270,7 @@ const MusicPlayer = ({ recordingData }) => {
   };
 
   const handleGroupClick = (groupName) => {
-    const value = groupVolume[groupName] === "300" ? "100" : "300"; // Toggle between 100% and 300%
+    const value = groupVolume[groupName] === "4" ? "1" : "4"; // Toggle between 1x and 4x
     setGroupVolume(prev => ({...prev, [groupName]: value}));
     handleGroupVolume(groupName, value);
   };
@@ -380,7 +380,7 @@ const MusicPlayer = ({ recordingData }) => {
                   </button>
                   <h3 
                     onClick={() => handleGroupClick(groupName)}
-                    className={`group-name ${groupVolume[groupName] === "300" ? 'highlighted' : ''}`}
+                    className={`group-name ${groupVolume[groupName] === "4" ? 'highlighted' : ''}`}
                     style={{ cursor: 'pointer' }}
                   >
                     {groupName}
@@ -400,7 +400,7 @@ const MusicPlayer = ({ recordingData }) => {
                   <input
                     type="range"
                     min="3"
-                    max="6"
+                    max="10"
                     step="0.5"
                     value={groupVolume[groupName] || 4} // Default to 4x
                     onChange={(e) => {
